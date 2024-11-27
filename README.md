@@ -1,7 +1,3 @@
-Here's the `README.md` file you can copy:
-
----
-
 # Sakai Installation Guide on WSL 20.04 (Ubuntu)
 
 This guide provides step-by-step instructions to install JDK 11, Maven 3.8.4, Tomcat 9.0.78, and set up Sakai on Windows Subsystem for Linux (WSL) 20.04 (Ubuntu).
@@ -14,7 +10,7 @@ This guide provides step-by-step instructions to install JDK 11, Maven 3.8.4, To
 - [3. Set Up Tomcat Locally on Windows](#3-set-up-tomcat-locally-on-windows)
   - [3.1 Configure Environment Variables on WSL](#31-configure-environment-variables-on-wsl)
   - [3.2 Modify `server.xml` for International Character Support](#32-modify-serverxml-for-international-character-support)
-  - [3.3 Create `setenv.sh` or `setenv.bat`](#33-create-setenvsh-or-setenvbat)
+  - [3.3 Create `setenv.bat`](#33-create-setenvbat)
   - [3.4 Improve Startup Speed](#34-improve-startup-speed)
 - [4. Create a `sakai.properties` File](#4-create-a-sakaiproperties-file)
 - [5. Set Up MySQL 8](#5-set-up-mysql-8)
@@ -75,7 +71,11 @@ mvn -version
 
 ## 3. Set Up Tomcat Locally on Windows
 
-Download and install Tomcat 9.0.78 on Windows and extract it to `C:\tomcat`.
+Download and install Tomcat 9.0.78 on Windows:
+
+- **Download Link**: [apache-tomcat-9.0.78.zip](https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.78/bin/apache-tomcat-9.0.78.zip)
+
+Extract it to `C:\tomcat`.
 
 ### 3.1 Configure Environment Variables on WSL
 
@@ -111,40 +111,7 @@ Edit `conf/server.xml` in your Tomcat directory and add `URIEncoding="UTF-8"` to
 <Connector port="8080" URIEncoding="UTF-8" protocol="HTTP/1.1" ...
 ```
 
-### 3.3 Create `setenv.sh` or `setenv.bat`
-
-#### For Mac/Linux (including WSL):
-
-Create a file called `setenv.sh` in `$CATALINA_HOME/bin`:
-
-```bash
-nano $CATALINA_HOME/bin/setenv.sh
-```
-
-Add the following content:
-
-```bash
-export JAVA_OPTS="-server -d64 -Xms1g -Xmx2g -Djava.awt.headless=true -XX:+UseCompressedOops -XX:+UseConcMarkSweepGC -XX:+DisableExplicitGC"
-JAVA_OPTS="$JAVA_OPTS -Dhttp.agent=Sakai"
-JAVA_OPTS="$JAVA_OPTS -Dorg.apache.jasper.compiler.Parser.STRICT_QUOTE_ESCAPING=false"
-JAVA_OPTS="$JAVA_OPTS -Djava.util.Arrays.useLegacyMergeSort=true"
-JAVA_OPTS="$JAVA_OPTS -Dsakai.security=$CATALINA_HOME/sakai/"
-JAVA_OPTS="$JAVA_OPTS -Duser.timezone=US/Eastern"
-JAVA_OPTS="$JAVA_OPTS -Dsakai.cookieName=SAKAI2SESSIONID"
-JAVA_OPTS="$JAVA_OPTS -Dcom.sun.management.jmxremote"
-JAVA_OPTS="$JAVA_OPTS -Dcom.sun.management.jmxremote.port=8089"
-JAVA_OPTS="$JAVA_OPTS -Dcom.sun.management.jmxremote.local.only=false"
-JAVA_OPTS="$JAVA_OPTS -Dcom.sun.management.jmxremote.authenticate=false"
-JAVA_OPTS="$JAVA_OPTS -Dcom.sun.management.jmxremote.ssl=false"
-```
-
-Make the script executable:
-
-```bash
-chmod +x $CATALINA_HOME/bin/setenv.sh
-```
-
-#### For Windows:
+### 3.3 Create `setenv.bat`
 
 Create a file called `setenv.bat` in `%CATALINA_HOME%\bin` with the following content:
 
@@ -261,13 +228,6 @@ mvn clean install sakai:deploy -Dmaven.tomcat.home=$CATALINA_HOME \
 
 Navigate to the Tomcat `bin` directory and start the server.
 
-### For Mac/Linux (including WSL):
-
-```bash
-cd $CATALINA_HOME/bin
-./startup.sh
-```
-
 ### For Windows:
 
 Open Command Prompt and run:
@@ -275,6 +235,13 @@ Open Command Prompt and run:
 ```bat
 cd C:\tomcat\bin
 startup.bat
+```
+
+### For Mac/Linux (including WSL):
+
+```bash
+cd $CATALINA_HOME/bin
+./startup.sh
 ```
 
 ## Support
