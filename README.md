@@ -222,6 +222,7 @@ mvn clean install sakai:deploy -Dmaven.tomcat.home=$CATALINA_HOME \
 -Dsakai.home=$CATALINA_HOME/sakai \
 -Djava.net.preferIPv4Stack=true \
 -Dmaven.test.skip=true
+-Dmaven.cleanup=true
 ```
 
 ## 7. Start Up Sakai
