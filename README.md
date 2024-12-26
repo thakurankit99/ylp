@@ -43,6 +43,14 @@ Verify the installation:
 java -version
 ```
 
+Set Env Vars on Ubuntu:
+
+```bash
+nano ~/.bashrc
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-arm64/bin
+export PATH=$JAVA_HOME/bin:$PATH
+```
+
 ## 2. Install Maven 3.8.4
 
 Download and extract Maven:
