@@ -47,7 +47,7 @@ Set Env Vars on Ubuntu:
 
 ```bash
 nano ~/.bashrc
-export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-arm64/bin
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-arm64
 export PATH=$JAVA_HOME/bin:$PATH
 ```
 
@@ -175,8 +175,7 @@ defaultTransactionIsolationString@javax.sql.BaseDataSource=TRANSACTION_READ_COMM
 
 Download and install MySQL 8:
 
-- **Installer**: [mysql-8.0.32-winx64.msi](https://dev.mysql.com/downloads/mysql/)
-- **Workbench**: [mysql-workbench-community-8.0.32-winx64.msi](https://dev.mysql.com/downloads/workbench/)
+- **Installer**: [mysql-8.0.40-winx64.msi](https://downloads.mysql.com/archives/installer/)
 
 Create the Sakai database and user:
 
