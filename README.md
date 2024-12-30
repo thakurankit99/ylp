@@ -270,6 +270,11 @@ cd $CATALINA_HOME/bin
 ./startup.sh
 ```
 
+check logs on linux
+```bash
+ tail -f /opt/tomcat/logs/catalina.out
+```
+
 ## Support
 
 If you encounter issues during installation, please refer to the Sakai [documentation](https://www.sakaiproject.org/) or open an issue on the [Sakai GitHub repository](https://github.com/sakaiproject/sakai).
