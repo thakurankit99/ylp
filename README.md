@@ -83,6 +83,12 @@ Download and install Tomcat 9.0.78 on Windows:
 
 - **Download Link**: [apache-tomcat-9.0.78.zip](https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.78/bin/apache-tomcat-9.0.78.zip)
 
+```bash
+wget https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.78/bin/apache-tomcat-9.0.78.tar.gz
+sudo tar -xvzf apache-tomcat-9.0.78.tar.gz -C /opt
+sudo mv /opt/apache-tomcat-9.0.78 /opt/tomcat
+```
+
 Extract it to `C:\tomcat`.
 
 ### 3.1 Configure Environment Variables on WSL
