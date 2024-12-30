@@ -47,7 +47,7 @@ Set Env Vars on Ubuntu:
 
 ```bash
 nano ~/.bashrc
-export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-arm64
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 export PATH=$JAVA_HOME/bin:$PATH
 ```
 
