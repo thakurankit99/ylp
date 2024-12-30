@@ -210,7 +210,7 @@ Extract the `mysql-connector-java-8.0.32.jar` file and place it into:
 ```bash
 wget https://cdn.mysql.com/archives/mysql-connector-java-8.0/mysql-connector-j-8.0.32.tar.gz -O /tmp/mysql-connector-j-8.0.32.tar.gz
 tar -xvzf /tmp/mysql-connector-j-8.0.32.tar.gz -C /tmp
-sudo cp /tmp/mysql-connector-j-8.0.32/mysql-connector-java-8.0.32.jar /opt/tomcat/lib/
+sudo cp /tmp/mysql-connector-j-8.0.32/mysql-connector-j-8.0.32.jar /opt/tomcat/lib/
 ls /opt/tomcat/lib | grep mysql-connector-java
 ```
 
