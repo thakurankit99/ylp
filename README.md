@@ -219,7 +219,7 @@ ls /opt/tomcat/lib | grep mysql-connector-java
 Clone the Sakai repository:
 
 ```bash
-git clone https://github.com/thakurankit99/sakai.git
+git clone --branch 23.x --single-branch https://github.com/thakurankit99/sakai.git
 cd sakai
 git checkout 23.x
 ```
