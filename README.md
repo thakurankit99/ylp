@@ -111,6 +111,11 @@ Verify the variable:
 echo $CATALINA_HOME
 ```
 
+for linux
+```bash
+sudo chmod -R 777 /opt/tomcat
+```
+
 ### 3.2 Modify `server.xml` for International Character Support
 
 Edit `conf/server.xml` in your Tomcat directory and add `URIEncoding="UTF-8"` to the `<Connector>` element:
@@ -201,6 +206,13 @@ Extract the `mysql-connector-java-8.0.32.jar` file and place it into:
 
 - **Windows**: `C:\tomcat\lib`
 - **WSL**: `/mnt/c/tomcat/lib`
+
+```bash
+wget https://cdn.mysql.com/archives/mysql-connector-java-8.0/mysql-connector-j-8.0.32.tar.gz -O /tmp/mysql-connector-j-8.0.32.tar.gz
+tar -xvzf /tmp/mysql-connector-j-8.0.32.tar.gz -C /tmp
+sudo cp /tmp/mysql-connector-j-8.0.32/mysql-connector-java-8.0.32.jar /opt/tomcat/lib/
+ls /opt/tomcat/lib | grep mysql-connector-java
+```
 
 ## 6. Compile Sakai Source Code
 
