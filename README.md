@@ -64,11 +64,8 @@ sudo mv /opt/apache-maven-3.8.4 /opt/maven
 Set up Maven environment variables:
 
 ```bash
-echo "export MAVEN_HOME=/opt/maven" | sudo tee -a /etc/profile.d/maven.sh
-echo "export PATH=\$MAVEN_HOME/bin:\$PATH" | sudo tee -a /etc/profile.d/maven.sh
-echo "export MAVEN_OPTS='-Xms512m -Xmx1024m'" | sudo tee -a /etc/profile.d/maven.sh
-sudo chmod +x /etc/profile.d/maven.sh
-source /etc/profile.d/maven.sh
+export MAVEN_HOME=/opt/maven
+export PATH=$MAVEN_HOME/bin:$PATH
 ```
 
 Verify Maven installation:
