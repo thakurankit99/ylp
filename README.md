@@ -352,8 +352,9 @@ This project is licensed under the terms of the Apache License 2.0. See [LICENSE
 ## 1. Install JDK 11 (Linux)
 
 ```bash
-sudo apt update
-sudo apt install openjdk-11-jdk -y
+wget https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.16.1%2B1/OpenJDK11U-jdk_x64_linux_hotspot_11.0.16.1_1.tar.gz -O /tmp/temurin11.tar.gz
+sudo tar -xvzf /tmp/temurin11.tar.gz -C /opt
+sudo mv /opt/jdk-11.0.16.1+1 /opt/temurin-11
 ```
 
 Set environment variables:
@@ -362,7 +363,7 @@ Set environment variables:
 nano ~/.bashrc
 
 # Add:
-export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+export JAVA_HOME=/opt/temurin-11
 export PATH=$JAVA_HOME/bin:$PATH
 
 source ~/.bashrc
