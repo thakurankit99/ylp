@@ -393,6 +393,7 @@ nano ~/.bashrc
 # Add:
 export MAVEN_HOME=/opt/maven
 export PATH=$MAVEN_HOME/bin:$PATH
+export MAVEN_OPTS='-Xms512m -Xmx1024m'
 
 source ~/.bashrc
 mvn -version
